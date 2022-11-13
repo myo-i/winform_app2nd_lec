@@ -55,6 +55,20 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NDDD.Domain\NDDD.Domain.csproj">
+      <Project>{a009bf95-e5cf-4375-a5f9-c3f00b1f7d5b}</Project>
+      <Name>NDDD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDDD.Infrastructure\NDDD.Infrastructure.csproj">
+      <Project>{849b7c91-c03c-4255-8cb7-ac296fe81d9e}</Project>
+      <Name>NDDD.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDDD.Winform\NDDD.Winform.csproj">
+      <Project>{ba301be7-0a9d-4f80-9afb-f5bd686c29f4}</Project>
+      <Name>NDDD.Winform</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
