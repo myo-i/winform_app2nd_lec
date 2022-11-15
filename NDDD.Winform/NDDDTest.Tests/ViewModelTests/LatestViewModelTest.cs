@@ -1,4 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using NDDD.Domain.Entities;
+using NDDD.Domain.Repositories;
 using NDDD.Winform.ViewModels;
 using System;
 
@@ -10,7 +13,9 @@ namespace NDDDTest.Tests.ViewModelTests
         [TestMethod]
         public void TestMethod1()
         {
-            var vm = new LatestViewModel();
+            var measureMock = new Mock<IMeasureRepository>();
+            measureMock.Setup(x => x.GetLatest()).Returns( );
+            var vm = new LatestViewModel(measureMock.Object);
             // エリアID
             // 計測日時
             // 計測値
