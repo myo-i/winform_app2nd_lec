@@ -13,8 +13,12 @@ namespace NDDDTest.Tests.ViewModelTests
         [TestMethod]
         public void TestMethod1()
         {
+            var entity = new MeasureEntity(
+                1,
+                Convert.ToDateTime("2022/12/12 12:34:56"),
+                12.341f);
             var measureMock = new Mock<IMeasureRepository>();
-            measureMock.Setup(x => x.GetLatest()).Returns( );
+            measureMock.Setup(x => x.GetLatest()).Returns(entity);
             var vm = new LatestViewModel(measureMock.Object);
             // エリアID
             // 計測日時
