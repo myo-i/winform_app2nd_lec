@@ -18,9 +18,33 @@ namespace NDDD.Winform.ViewModels
             _measureRepository = measureRepository;
         }
         // Entityが入る
-        public string AreaIdText { get; set; }
-        public string MeasureDateText { get; set; }
-        public string MeasureValueText { get; set; }
+        public string AreaIdText
+        {
+            get
+            {
+                if (_measure == null) return string.Empty;
+
+                // PadLeftで4桁左に0埋め
+                return _measure?.AreaId.ToString().PadLeft(4, '0');
+            }
+        }
+        public string MeasureDateText 
+        {
+            get
+            {
+                if (_measure == null) return string.Empty;
+
+                return _measure?.MeasureDate.ToString("yyyy/MM/dd HH:mm:ss");
+            }
+        }
+        public string MeasureValueText 
+        {
+            get 
+            {
+                if (_measure == null) return string.Empty;
+                return Math.Round(_measure.MeasureValue, 2) + "℃"; 
+            }
+        }
 
         public void Search()
         {
