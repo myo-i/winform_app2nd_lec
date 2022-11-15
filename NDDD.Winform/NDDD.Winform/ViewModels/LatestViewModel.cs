@@ -1,4 +1,6 @@
-﻿using NDDD.WinForm.ViewModels;
+﻿using NDDD.Domain.Entities;
+using NDDD.Domain.Repositories;
+using NDDD.WinForm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,12 @@ namespace NDDD.Winform.ViewModels
 {
     public class LatestViewModel : ViewModelBase
     {
+        IMeasureRepository _measureRepository;
+        MeasureEntity _measure;
+        public LatestViewModel(IMeasureRepository measureRepository)
+        {
+            _measureRepository = measureRepository;
+        }
         // Entityが入る
         public string AreaIdText { get; set; }
         public string MeasureDateText { get; set; }
@@ -16,7 +24,7 @@ namespace NDDD.Winform.ViewModels
 
         public void Search()
         {
-            throw new NotImplementedException();
+            _measure = _measureRepository.GetLatest();
         }
     }
 }
