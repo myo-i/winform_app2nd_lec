@@ -9,6 +9,7 @@ namespace NDDD.Winform.ViewModels
 {
     public class LatestViewModel : ViewModelBase
     {
+        // Entityが入る
         public string AreaIdText { get; set; }
         public string MeasureDateText { get; set; }
         public string MeasureValueText { get; set; }
