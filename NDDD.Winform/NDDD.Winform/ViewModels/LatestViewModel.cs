@@ -49,6 +49,7 @@ namespace NDDD.Winform.ViewModels
         public void Search()
         {
             _measure = _measureRepository.GetLatest();
+            base.OnPropertyChanged();
         }
     }
 }
