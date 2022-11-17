@@ -1,5 +1,6 @@
 ﻿using NDDD.Domain.Entities;
 using NDDD.Domain.Repositories;
+using System;
 
 namespace NDDD.Infrastructure.Fake
 {
@@ -7,7 +8,10 @@ namespace NDDD.Infrastructure.Fake
     {
         public MeasureEntity GetLatest()
         {
-            throw new System.NotImplementedException();
+            return new MeasureEntity(
+                10,
+                Convert.ToDateTime("2024/12/12 12:34:56"),
+                123.341f);
         }
     }
 }
