@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NDDD.Infrastructure.Fake.SqlServer
 {
-    public sealed class MeasureSqlServer : IMeasureRepository
+    internal sealed class MeasureSqlServer : IMeasureRepository
     {
         public MeasureEntity GetLatest()
         {
