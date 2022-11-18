@@ -20,6 +20,10 @@ namespace NDDD.Winform.Views
         public LatestView()
         {
             InitializeComponent();
+            toolStripStatusLabel1.Visible= false;
+#if DEBUG
+            toolStripStatusLabel1.Visible= true;
+#endif
 
             // １つ目どのプロパティにバインドするか
             // ２つ目バインドする元
