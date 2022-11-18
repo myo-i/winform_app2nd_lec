@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NDDD.Winform
+namespace NDDD.Winform.Views
 {
-    public partial class Form1 : Form
+    public partial class BaseForm : Form
     {
-        public Form1()
+        public BaseForm()
         {
             InitializeComponent();
+
+            toolStripStatusLabel1.Visible = false;
+#if DEBUG
+            toolStripStatusLabel1.Visible = true;
+#endif
+
         }
     }
 }
