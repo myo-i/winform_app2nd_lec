@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDDD.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace NDDD.Winform.Views
             toolStripStatusLabel1.Visible = true;
 #endif
 
+            UserIdLabel.Text = Shared.LoginId;
         }
     }
 }
