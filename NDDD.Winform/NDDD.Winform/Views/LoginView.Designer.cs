@@ -50,7 +50,6 @@
             this.PasswordTextBox.Location = new System.Drawing.Point(140, 57);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.ReadOnly = true;
             this.PasswordTextBox.Size = new System.Drawing.Size(125, 19);
             this.PasswordTextBox.TabIndex = 12;
             // 
@@ -67,7 +66,6 @@
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(140, 23);
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.ReadOnly = true;
             this.LoginTextBox.Size = new System.Drawing.Size(125, 19);
             this.LoginTextBox.TabIndex = 8;
             // 

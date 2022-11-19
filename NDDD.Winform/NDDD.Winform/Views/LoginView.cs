@@ -14,6 +14,13 @@ namespace NDDD.Winform.Views
         private void LoginButton_Click(object sender, EventArgs e)
         {
             Shared.LoginId = LoginTextBox.Text;
+
+            // LatestViewを表示
+            using (var f = new LatestView())
+            {
+                f.ShowDialog();
+            }
+
         }
     }
 }
