@@ -58,7 +58,7 @@ namespace NDDD.Winform.ViewModels
             //_measure = _measureRepository.GetLatest();
             var measure = _measureRepository.GetLatest();
             AreaIdText = measure.AreaId.DisplayValue;
-            MeasureDateText = measure.MeasureDate.ToString("yyyy/MM/dd HH:mm:ss");
+            MeasureDateText = measure.MeasureDate.DisplayValue;
             MeasureValueText = Math.Round(measure.MeasureValue, 2) + "℃";
             //base.OnPropertyChanged();
         }
