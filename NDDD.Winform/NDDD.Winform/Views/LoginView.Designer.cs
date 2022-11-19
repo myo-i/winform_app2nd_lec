@@ -43,13 +43,13 @@
             this.LoginButton.TabIndex = 13;
             this.LoginButton.Text = "ログイン";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(140, 57);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.ReadOnly = true;
             this.PasswordTextBox.Size = new System.Drawing.Size(125, 19);
             this.PasswordTextBox.TabIndex = 12;
             // 
@@ -66,7 +66,6 @@
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(140, 23);
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.ReadOnly = true;
             this.LoginTextBox.Size = new System.Drawing.Size(125, 19);
             this.LoginTextBox.TabIndex = 8;
             // 
@@ -91,7 +90,11 @@
             this.Controls.Add(this.label1);
             this.Name = "LoginView";
             this.Text = "LoginView";
-            // this.Load += new System.EventHandler(this.LoginView_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.LoginTextBox, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.PasswordTextBox, 0);
+            this.Controls.SetChildIndex(this.LoginButton, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

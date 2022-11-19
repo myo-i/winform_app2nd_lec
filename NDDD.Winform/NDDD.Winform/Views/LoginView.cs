@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDDD.Domain;
+using System;
 using System.Windows.Forms;
 
 namespace NDDD.Winform.Views
@@ -8,6 +9,18 @@ namespace NDDD.Winform.Views
         public LoginView()
         {
             InitializeComponent();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            Shared.LoginId = LoginTextBox.Text;
+
+            // LatestViewを表示
+            using (var f = new LatestView())
+            {
+                f.ShowDialog();
+            }
+
         }
     }
 }

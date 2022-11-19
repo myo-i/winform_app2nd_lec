@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using Microsoft.SqlServer.Server;
+using System.Configuration;
 
 namespace NDDD.Domain
 {
@@ -10,5 +11,7 @@ namespace NDDD.Domain
 
         public static string FakePath { get; } =
             ConfigurationManager.AppSettings["FakePath"];
+
+        public static string LoginId { get; set; } = string.Empty;
     }
 }
