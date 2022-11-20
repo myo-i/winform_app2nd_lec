@@ -12,7 +12,7 @@ namespace NDDD.Winform.ViewModels
 {
     public class LatestViewModel : ViewModelBase
     {
-        IMeasureRepository _measureRepository;
+        MeasureRepository _measureRepository;
         //MeasureEntity _measure;
 
         private string _areaIdText = string.Empty;
@@ -25,7 +25,7 @@ namespace NDDD.Winform.ViewModels
         }
         public LatestViewModel(IMeasureRepository measureRepository)
         {
-            _measureRepository = measureRepository;
+            _measureRepository = new MeasureRepository(measureRepository);
         }
         // Entityが入る
         public string AreaIdText
