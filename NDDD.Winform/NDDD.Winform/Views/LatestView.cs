@@ -30,7 +30,14 @@ namespace NDDD.Winform.Views
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            _viewModel.Search();
+            try
+            {
+                _viewModel.Search();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
