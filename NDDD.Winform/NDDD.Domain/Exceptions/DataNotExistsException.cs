@@ -2,12 +2,15 @@
 
 namespace NDDD.Domain.Exceptions
 {
-    public sealed class DataNotExistsException : Exception
+    public sealed class DataNotExistsException : ExceptionBase
     {
 
         public DataNotExistsException() 
             :base("データがありません")
         { 
         }
+
+        // データが取れないことはシステムとしておかしいわけではないのでInfo
+        public override ExceptionKind Kind => ExceptionKind.Info;
     }
 }
