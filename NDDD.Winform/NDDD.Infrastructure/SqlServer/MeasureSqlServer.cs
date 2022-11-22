@@ -16,5 +16,9 @@ namespace NDDD.Infrastructure.Fake.SqlServer
             throw new NotImplementedException();
         }
 
+        public IReadOnlyList<MeasureEntity> GetLatests()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
