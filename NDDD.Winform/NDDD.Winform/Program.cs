@@ -1,4 +1,5 @@
-﻿using NDDD.Winform.Views;
+﻿using NDDD.Winform.BackgroundWorkers;
+using NDDD.Winform.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace NDDD.Winform
             _logger.Warn("警告のログ");
             _logger.Error("エラーのログ");
             _logger.Fatal("致命的なログ");
+
+            LatestTimer.Start();
 
             Application.Run(new LoginView());
         }
