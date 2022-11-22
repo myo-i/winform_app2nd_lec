@@ -1,4 +1,5 @@
-﻿using NDDD.Winform.ViewModels;
+﻿using NDDD.Domain.Exceptions;
+using NDDD.Winform.ViewModels;
 using System;
 using System.Windows.Forms;
 
@@ -30,7 +31,14 @@ namespace NDDD.Winform.Views
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            _viewModel.Search();
+            try
+            {
+                _viewModel.Search();
+            }
+            catch(Exception ex)
+            {
+                ExceptionDiv(ex);
+            }
         }
     }
 }

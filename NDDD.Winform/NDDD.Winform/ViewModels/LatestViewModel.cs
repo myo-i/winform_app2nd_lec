@@ -12,7 +12,7 @@ namespace NDDD.Winform.ViewModels
 {
     public class LatestViewModel : ViewModelBase
     {
-        IMeasureRepository _measureRepository;
+        MeasureRepository _measureRepository;
         //MeasureEntity _measure;
 
         private string _areaIdText = string.Empty;
@@ -25,7 +25,7 @@ namespace NDDD.Winform.ViewModels
         }
         public LatestViewModel(IMeasureRepository measureRepository)
         {
-            _measureRepository = measureRepository;
+            _measureRepository = new MeasureRepository(measureRepository);
         }
         // Entityが入る
         public string AreaIdText
@@ -57,9 +57,9 @@ namespace NDDD.Winform.ViewModels
         {
             //_measure = _measureRepository.GetLatest();
             var measure = _measureRepository.GetLatest();
-            AreaIdText = measure.AreaId.ToString().PadLeft(4, '0');
-            MeasureDateText = measure.MeasureDate.ToString("yyyy/MM/dd HH:mm:ss");
-            MeasureValueText = Math.Round(measure.MeasureValue, 2) + "℃";
+            AreaIdText = measure.AreaId.DisplayValue;
+            MeasureDateText = measure.MeasureDate.DisplayValue;
+            MeasureValueText = measure.MeasureValue.DisplayValue;
             //base.OnPropertyChanged();
         }
     }
