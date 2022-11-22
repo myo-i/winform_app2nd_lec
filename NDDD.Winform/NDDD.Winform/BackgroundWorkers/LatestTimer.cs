@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NDDD.Domain.StaticValues;
+using NDDD.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +16,20 @@ namespace NDDD.Winform.BackgroundWorkers
 
         private static bool _isWork = false;
 
+        // Startで設定した第二引数ごとに呼び出される
         static LatestTimer()
         {
             _timer = new Timer(Callback);
         }
 
+        // タイマーの開始
         internal static void Start()
         {
-            // 10秒後から10秒間隔
-            _timer.Change(10000, 10000);
+            // 0秒後から10秒間隔
+            _timer.Change(0, 10000);
         }
 
+        // タイマーの停止
         internal static void Stop()
         {
             _timer.Change(Timeout.Infinite, Timeout.Infinite);
@@ -46,6 +51,7 @@ namespace NDDD.Winform.BackgroundWorkers
             {
                 _isWork = true;
                 // 処理
+                Measures.Create(Factories.CreateMeasure());
             }
             finally
             {
