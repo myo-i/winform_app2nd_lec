@@ -8,6 +8,10 @@ namespace NDDD.Winform.Views
 {
     public partial class BaseForm : Form
     {
+        private static log4net.ILog _logger =
+            log4net.LogManager.GetLogger(
+                System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public BaseForm()
         {
             InitializeComponent();
@@ -22,6 +26,7 @@ namespace NDDD.Winform.Views
 
         protected void ExceptionDiv(Exception ex)
         {
+            _logger.Error(ex.Message, ex);
             MessageBoxIcon icon = MessageBoxIcon.Error;
             // captionはメッセージボックスのタイトル
             string caption = "エラー";
@@ -45,6 +50,16 @@ namespace NDDD.Winform.Views
             }
             MessageBox.Show(ex.Message, caption, MessageBoxButtons.OK, icon);
 
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            _logger.Error("open:" + this.Name);
+        }
+
+        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _logger.Error("close:" + this.Name);
         }
     }
 }
