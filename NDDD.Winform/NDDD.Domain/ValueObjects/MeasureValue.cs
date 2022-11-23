@@ -1,4 +1,5 @@
 ﻿using DDD.Domain.ValueObjects;
+using NDDD.Domain.Helpers;
 using System;
 
 namespace NDDD.Domain.ValueObjects
@@ -12,7 +13,8 @@ namespace NDDD.Domain.ValueObjects
 
         public float Value { get; }
 
-        public string DisplayValue => Math.Round(Value, 2) + "℃";
+        //public string DisplayValue => Math.Round(Value, 2) + "℃";
+        public string DisplayValue => Value.RoundString(7) + "℃";
 
 
         protected override bool EqualsCore(MeasureValue other)
