@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace NDDD.Winform.ViewModels
 {
@@ -63,6 +64,20 @@ namespace NDDD.Winform.ViewModels
             MeasureDateText = measure.MeasureDate.DisplayValue;
             MeasureValueText = measure.MeasureValue.DisplayValue;
             //base.OnPropertyChanged();
+        }
+
+        public void SaveTransaction()
+        {
+            using (var scope = new TransactionScope())
+            {
+                // ヘッダー
+                // 明細
+                // 在庫
+                // 履歴
+                // 顧客情報
+
+                scope.Complete();
+            }
         }
     }
 }
